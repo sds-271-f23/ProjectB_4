@@ -3,9 +3,9 @@ Write a class that does the following uses a Monte Carlo simulation to calculate
 Remember that
 
 
-$A_c= \pi R^2$
+A_c= pi R^2
 
-$A_s=L^2 = (2R)^2$
+A_s=L^2 = (2R)^2
 
 Your class should:
 
