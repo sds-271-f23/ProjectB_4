@@ -170,6 +170,7 @@ The number of dart throws per set and number of monte carlo repetitions (how man
                 ------
                 :return: None
                 """
+                
         def rand_point_generator(self):
                 """
                 Generates random points for dart throws
