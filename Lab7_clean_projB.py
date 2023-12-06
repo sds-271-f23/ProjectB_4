@@ -23,7 +23,6 @@ class monte_carlo_pi():
         self.darts_monte_carlo_number = darts_monte_carlo_number
 
 
-    
     def create_visualization(self, xy_info_df):
         """
         Creates scatterplot visualization for set of one dart throws
@@ -52,15 +51,12 @@ class monte_carlo_pi():
         """
         li = []
         for i in range(self.darts_monte_carlo_number):
-            x = random.randint(0, self.length)
-            y = random.randint(0, self.length)
+            x = random.uniform(0, self.length)
+            y = random.uniform(0, self.length)
             pair = [x,y]
             li.append(pair)
         return li
 
-
-        
-    
     
     def in_circle(self, points_list):
         """
@@ -75,12 +71,11 @@ class monte_carlo_pi():
         center = [self.length/2,self.length/2]
         count = 0
         for i in points_list:
-            dis= math.dist(center,i)
+            dis = math.dist(center,i)
             if dis < self.radius:
                 count +=1
         return count
 
-    
     def calc_pi(self):
         """
         Calculate estimate of pi 
@@ -88,7 +83,7 @@ class monte_carlo_pi():
         """
         points_list = self.rand_point_generator()
         count = self.in_circle(points_list)
-        return count/self.darts_monte_carlo_number
+        return (count/self.darts_monte_carlo_number)*4
     
     def monte_carlo_reps(self):
         """
@@ -101,17 +96,10 @@ class monte_carlo_pi():
             # adds pi estimate to pi estimate total to calculate avg pi estimate later
         # calculates standard deviation of the pi estimates 
         # calculates average pi estimate 
+
         temp=[]
         for i in range(self.darts_monte_carlo_number):
             temp.append(self.calc_pi())
         ave = np.average(temp)
         std_error= np.std(temp)
         return [ave, std_error]
-        
-
-
-
-
-
-
-
