@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn
-# Iris Gao
+
 class monte_carlo_pi():
     def __init__(self, length, radius, darts_monte_carlo_number):
         """
